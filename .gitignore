@@ -1,0 +1,13 @@
+# system files
+*Thumbs.db
+*DS_Store
+
+# node and Sass folders
+*node_modules
+*sass-cache
+
+# editor files
+*.sublime-workspace
+.buildpath
+.project
+.settings/

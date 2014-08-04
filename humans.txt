@@ -1,0 +1,18 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+/* TEAM */
+  Developer: Michael Schulze
+  Site: michsch.de
+  Twitter: @michsch
+  Location: Cologne, Germany
+
+/* THANKS */
+  Names (& URL):
+
+/* SITE */
+  Last update: 2014/08/05
+  Standards: HTML5, CSS3, Responsive Web Design
+  Components: Modernizr, jQuery
+  Software: Jekyll, Bower, Grunt, Sass
+  IDE: Sublime Text 2
