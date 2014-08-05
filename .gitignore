@@ -11,3 +11,6 @@
 .buildpath
 .project
 .settings/
+
+# Jekyll
+_site
