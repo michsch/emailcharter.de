@@ -1,19 +1,68 @@
 ---
-layout: default
+layout: start
 ---
 
 <div class="home">
 
-  <h1>Posts</h1>
+  <h1>email charter</h1>
 
-  <ul class="posts">
-    {% for post in site.posts %}
+  <section class="email-10-rules" role="region">
+    <header>
+      <h2>10 Regeln für angenehme E-Mails</h2>
+    </header>
+    <ol>
       <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <header>
+          <h3>Respektiere die Zeit des Empfängers</h3>
+        </header>
       </li>
-    {% endfor %}
-  </ul>
+      <li>
+        <header>
+          <h3>Kurz oder präzise ist nicht unhöflich</h3>
+        </header>
+      </li>
+      <li>
+        <header>
+          <h3>Zelebriere Klarheit und Übersichtlichkeit</h3>
+        </header>
+      </li>
+      <li>
+        <header>
+          <h3>Vermeide offene Fragen</h3>
+        </header>
+      </li>
+      <li>
+        <header>
+          <h3>Kürze die Anzahl an Empfängern (cc, bcc)</h3>
+        </header>
+      </li>
+      <li>
+        <header>
+          <h3>Reduziere den Diskussionsverlauf</h3>
+        </header>
+      </li>
+      <li>
+        <header>
+          <h3>Vermeide unnötige Anhänge</h3>
+        </header>
+      </li>
+      <li>
+        <header>
+          <h3>Verwende diese Zugaben: EOM NNTR</h3>
+        </header>
+      </li>
+      <li>
+        <header>
+          <h3>Kürze Antworten ohne inhaltlichen Mehrwert</h3>
+        </header>
+      </li>
+      <li>
+        <header>
+          <h3>Disconnect!</h3>
+        </header>
+      </li>
+    </ol>
+  </section>
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 

@@ -1,0 +1,19 @@
+{
+  "name": "emailcharter.de",
+  "version": "0.1.0",
+  "dependencies": {
+    "accessifyhtml5-amd": "~2.0.2",
+    "almond": "~0.2.9",
+    "box-sizing-polyfill": "latest",
+    "domready-collection": "0.2.x",
+    "html5shiv": "~3.7.2",
+    "javascript-debug": "*",
+    "jquery": "~1.11.1",
+    "jquery-migrate": "https://github.com/jquery/jquery-migrate.git#~1.2.1",
+    "pubsub-js": "~1.5.0",
+    "qunit": "~1.14.0",
+    "requirejs": "~2.1.14",
+    "requirejs-domready": "~2.0.1",
+    "normalize-css": "~3.0.1"
+  }
+}

@@ -14,3 +14,7 @@
 
 # Jekyll
 _site
+
+*.map
+
+dev/bower_components
