@@ -10,3 +10,7 @@ github_username:  michsch
 # Build settings
 markdown: kramdown
 permalink: pretty
+
+sass:
+  sass_dir: _sass
+  style: :nested
