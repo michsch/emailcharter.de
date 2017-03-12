@@ -1,0 +1,30 @@
+---
+---
+
+@import 'normalize';
+
+@include normalize();
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-size: 100%;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+  background-color: #efefef;
+}
+
+.page-wrapper {
+  box-sizing: border-box;
+  min-width: 300px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
