@@ -1,0 +1,30 @@
+<footer class="site-footer" role="contentinfo">
+
+  <div class="page-wrapper">
+    <div class="page">
+      <h2 class="footer-heading">{{ site.title }}</h2>
+
+      <div class="footer-col-1 column">
+        <ul>
+          <li>{{ site.title }}</li>
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col-2 column">
+        <ul>
+          {% if site.github_username %}<li>
+          </li>{% endif %}
+          {% if site.twitter_username %}<li>
+          </li>{% endif %}
+        </ul>
+      </div>
+
+      <div class="footer-col-3 column">
+        <p class="text">{{ site.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="/assets/bundle.js" charset="utf-8"></script>
+</footer>

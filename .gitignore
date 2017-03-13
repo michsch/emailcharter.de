@@ -17,4 +17,7 @@ _site
 
 *.map
 
-dev/bower_components
+.sass-cache
+.jekyll-metadata
+public
+src/assets/bundle.js

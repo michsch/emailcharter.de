@@ -4,4 +4,5 @@ gem 'github-pages'
 
 gem 'sass'
 
-gem 'bourbon'
+gem 'singularity'
+gem 'jekyll-redirect-from'
