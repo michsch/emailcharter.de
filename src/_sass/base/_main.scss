@@ -1,38 +1,38 @@
 // base main
 
+@media all {
+  // @section global typography settings
+  //
+  // vertical rhythm settings (based on em-unit)
+  // -------------------------------------------
+  // basefont-size: 14px (87.5%)
+  // line-height  : 21px (factor: 1.5)
 
-// @section global typography settings
-//
-// vertical rhythm settings (based on em-unit)
-// -------------------------------------------
-// basefont-size: 14px (87.5%)
-// line-height  : 21px (factor: 1.5)
+  // (en) reset font size for all elements to standard (16 Pixel)
+  // (de) Alle Schriftgrößen auf Standardgröße (16 Pixel) zurücksetzen
+  html * {
+    font-size: 100%;
+  }
 
-// (en) reset font size for all elements to standard (16 Pixel)
-// (de) Alle Schriftgrößen auf Standardgröße (16 Pixel) zurücksetzen
-html * {
-  font-size: 100%;
-}
+  html,
+  body {
+    height: 100%;
+  }
 
-html,
-body {
-  height: 100%;
-}
+  // (en) base layout gets standard font size
+  // (de) Basis-Layout erhält Standardschriftgröße
+  body {
+    font-family: $font-sans;
+    font-size: $font-size-body;
+    color: $c-text;
+    vertical-align: baseline;
 
-// (en) base layout gets standard font size
-// (de) Basis-Layout erhält Standardschriftgröße
-body {
-  font-family: $font-sans;
-  font-size: $font-size-body;
-  color: $c-text;
-  vertical-align: baseline;
+    // (en) Prevent auto-scaling of text in mobile webkit browsers
+    // (en) Automatische Schriftvergrößerung in mobilen Webkit-Browsern vermeiden
+    text-size-adjust: 100%;
 
-  // (en) Prevent auto-scaling of text in mobile webkit browsers
-  // (en) Automatische Schriftvergrößerung in mobilen Webkit-Browsern vermeiden
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-
-  @if $use-font-smoothing == true {
-    @include font-smoothing();
+    @if $use-font-smoothing == true {
+      //@include font-smoothing();
+    }
   }
 }

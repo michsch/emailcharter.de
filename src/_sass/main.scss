@@ -1,3 +1,10 @@
+
+@import 'config/config';
 @import 'framework/normalize';
+@import 'framework/singularitygs';
 
 @include normalize();
+
+@import 'base/main';
+
+@import 'layout/screen';

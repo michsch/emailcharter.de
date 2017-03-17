@@ -10,7 +10,8 @@
 html {
   font-family: sans-serif;
   /* 1 */
-  line-height: 1.15;
+  font-size: 100%;
+  line-height: 1.25em;
   /* 2 */
   -ms-text-size-adjust: 100%;
   /* 3 */
@@ -41,11 +42,65 @@ section {
      * `article` contexts in Chrome, Firefox, and Safari.
      */
 h1 {
-  font-size: 2em;
-  margin: 0.67em 0; }
+  font-size: 1.4375em;
+  line-height: 1.73913em;
+  /* Set 1 unit of vertical rhythm on the top and bottom margins. */
+  margin: 0.86957em 0; }
+
+h2 {
+  font-size: 1.4375em;
+  line-height: 1.73913em;
+  margin: 0.86957em 0; }
+
+h3 {
+  font-size: 1.1875em;
+  line-height: 2.10526em;
+  margin: 1.05263em 0; }
+
+h4 {
+  font-size: 1em;
+  line-height: 1.25em;
+  margin: 1.25em 0; }
+
+h5 {
+  font-size: 1em;
+  line-height: 1.25em;
+  margin: 1.25em 0; }
+
+h6 {
+  font-size: 0.875em;
+  line-height: 1.42857em;
+  margin: 1.42857em 0; }
 
 /* Grouping content
        ========================================================================== */
+/**
+       * Set 1 unit of vertical rhythm on the top and bottom margin.
+       */
+blockquote {
+  margin: 1.25em 40px; }
+
+dl,
+ol,
+ul {
+  margin: 1.25em 0; }
+
+/**
+       * Turn off margins on nested lists.
+       */
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin: 0; }
+
+dd {
+  margin: 0 0 0 40px; }
+
+ol,
+ul {
+  padding: 0 0 0 40px; }
+
 /**
      * Add the correct display in IE 9-.
      */
@@ -57,7 +112,7 @@ figure {
      * Add the correct margin in IE 8.
      */
 figure {
-  margin: 1em 40px; }
+  margin: 1.25em 40px; }
 
 /**
      * 1. Add the correct box sizing in Firefox.
@@ -76,6 +131,13 @@ hr {
      */
 main {
   display: block; }
+
+/**
+       * Set 1 unit of vertical rhythm on the top and bottom margin.
+       */
+p,
+pre {
+  margin: 1.25em 0; }
 
 /**
      * 1. Correct the inheritance and scaling of font size in all browsers.
@@ -226,7 +288,7 @@ textarea {
   /* 1 */
   font-size: 100%;
   /* 1 */
-  line-height: 1.15;
+  line-height: 1.25em;
   /* 1 */
   margin: 0;
   /* 2 */ }
@@ -391,7 +453,22 @@ summary {
      * Add the correct display in IE 9-.
      */
 menu {
-  display: block; }
+  display: block;
+  /*
+         * 1. Set 1 unit of vertical rhythm on the top and bottom margin.
+         * 2. Set consistent space for the list style image.
+         */
+  margin: 1.25em 0;
+  /* 1 */
+  padding: 0 0 0 40px;
+  /* 2 */
+  /**
+         * Turn off margins on nested lists.
+         */ }
+  menu menu,
+  ol menu,
+  ul menu {
+    margin: 0; }
 
 /* Scripting
        ========================================================================== */
@@ -414,3 +491,34 @@ template {
      */
 [hidden] {
   display: none; }
+
+@media all {
+  html * {
+    font-size: 100%; }
+  html,
+  body {
+    height: 100%; }
+  body {
+    font-family: "Helvetica Neue", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    color: #000;
+    vertical-align: baseline;
+    text-size-adjust: 100%; } }
+
+@media screen {
+  body {
+    margin: 0;
+    padding: 0; }
+  .page-wrapper {
+    box-sizing: border-box;
+    min-width: 300px;
+    max-width: 960px;
+    margin: 0 auto; }
+  .page {
+    padding: 20px; }
+  .email-rules ol {
+    columns: 2;
+    counter-reset: rules; }
+    .email-rules ol li {
+      content: counter(rules);
+      counter-increment: rules; } }

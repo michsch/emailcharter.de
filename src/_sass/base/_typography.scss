@@ -1,10 +1,4 @@
-// base typography
 
-// (en) reset monospaced elements to font size 16px in all browsers
-// (de) Schriftgröße von monospaced Elemente in allen Browsern auf 16 Pixel
-// setzen
-//
-// @see: http://webkit.org/blog/67/strange-medium/
 
 textarea, pre, code, kbd, samp, var, tt {
   font-family: $font-monospace;
@@ -22,8 +16,9 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   @include font-size($h1-font-size);
-  margin-top: em($base-margin, $h1-font-size);
   @include line-height($h1-line-height, $h1-font-size);
+
+  margin-top: em($base-margin, $h1-font-size);
   font-weight: 300;
 
   @if $use-font-smoothing-h1 == true {
@@ -33,9 +28,9 @@ h1 {
 
 h2 {
   @include font-size($h2-font-size);
-  //margin-top: em($h2-line-height, $h2-font-size);
-  margin-top: em($base-margin, $h2-font-size);
   @include line-height($h1-line-height, $h2-font-size);
+
+  margin-top: em($base-margin, $h2-font-size);
   font-weight: 300;
 
   @if $use-font-smoothing-h2 == true {
@@ -45,8 +40,9 @@ h2 {
 
 h3 {
   @include font-size($h3-font-size);
-  margin-top: em($base-margin, $h3-font-size);
   @include line-height($h3-line-height, $h3-font-size);
+
+  margin-top: em($base-margin, $h3-font-size);
 
   @if $use-font-smoothing-h3 == true {
     @include font-smoothing();
@@ -55,10 +51,9 @@ h3 {
 
 h4 {
   @include font-size($h4-font-size);
-  margin-top: em($base-margin, $h4-font-size);
-  //margin-bottom: em($base-margin / 2 * -1, $h4-font-size);
   @include line-height($h4-line-height, $h4-font-size);
 
+  margin-top: em($base-margin, $h4-font-size);
   font-weight: 600;
 
   @if $use-font-smoothing-h4 == true {
@@ -68,9 +63,9 @@ h4 {
 
 h5 {
   @include font-size($h5-font-size);
-  margin-top: em($base-margin, $h5-font-size);
-  //margin-bottom: em($base-margin / 2 * -1, $h4-font-size);
   @include line-height($h5-line-height, $h5-font-size);
+
+  margin-top: em($base-margin, $h5-font-size);
 
   font-weight: 400;
   text-transform: uppercase;
@@ -82,10 +77,9 @@ h5 {
 
 h6 {
   @include font-size($h6-font-size);
-  margin-top: em($base-margin, $h6-font-size);
-  //margin-bottom: em($base-margin / 2 * -1, $h4-font-size);
   @include line-height($h6-line-height, $h6-font-size);
 
+  margin-top: em($base-margin, $h6-font-size);
   font-weight: 400;
   font-style: italic;
 
@@ -202,7 +196,6 @@ dd {
 p {
   font-size: 1em;
   line-height: $line-height;
-  //margin: ($std-margin / 2) 0 0 0;
   margin: $std-margin 0 0 0;
 }
 
@@ -211,45 +204,28 @@ h4 + p {
 }
 
 blockquote, cite, q {
-  //font-family: $font-serif;
-  //font-style: italic;
   font-family: $font-sans;
   font-weight: 300;
 }
 
 blockquote {
-  @include font-size($h2-font-size);
   position: relative;
-
   margin: em($base-margin, $h2-font-size) 0 0 em(40, $h2-font-size);
   color: $c-blockquote-text;
   background: $c-blockquote-bg;
-
-  &:before {
-    @include font-size(25, $h2-font-size);
-    @include icon();
-
-    position: absolute;
-    margin-left: em(-35, 25);
-    content: "\f10d"; // $fa-var-quote-left
-    color: #eee;
-  }
-
-  &,
-  p {
-    @include line-height($h2-line-height, $h2-font-size);
-  }
 
   p:first-child {
     margin-top: 0;
   }
 }
 
-strong, b {
+strong,
+b {
   font-weight: bold;
 }
 
-em, i {
+em,
+i {
   font-style: italic;
 }
 
@@ -298,11 +274,13 @@ tt {
   font-weight: bold;
 }
 
-var, dfn {
+var,
+dfn {
   font-style: italic;
 }
 
-acronym, abbr {
+acronym,
+abbr {
   border-bottom: 1px #aaa dotted;
   font-variant: small-caps;
   letter-spacing: .07em;
@@ -312,6 +290,7 @@ acronym, abbr {
 sub,
 sup {
   @include font-size(14);
+
   line-height: 0;
   position: relative;
   vertical-align: baseline;

@@ -1,23 +1,14 @@
 // Settings
-@import 'settings/compass',
-'settings/css3',
-'settings/px-to-pc';
+@import 'settings/px-to-pc';
 
 // Custom Functions
 @import 'functions/px-to-pc';
 
-// CSS3 Mixins
-@import 'css3/border-radius',
-'css3/font-smoothing',
-'css3/inline-block',
-'css3/ym-linear-gradient';
-
-
 // Addons & other mixins
-@import 'addons/clearfix',
-'addons/first-child',
-'addons/font-size',
-'addons/icon',
-'addons/image-replace',
-'addons/last-child',
-'addons/line-height';
+@import 'addons/clearfix';
+@import 'addons/first-child';
+@import 'addons/font-size';
+@import 'addons/icon';
+@import 'addons/image-replace';
+@import 'addons/last-child';
+@import 'addons/line-height';

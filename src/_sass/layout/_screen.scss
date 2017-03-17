@@ -1,0 +1,27 @@
+@media screen {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .page-wrapper {
+    box-sizing: border-box;
+    min-width: 300px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .page {
+    padding: 20px;
+  }
+
+  .email-rules ol {
+    columns: 2;
+    counter-reset: rules;
+
+    li {
+      content: counter(rules);
+	    counter-increment: rules;
+    }
+  }
+}

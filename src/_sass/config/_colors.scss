@@ -1,0 +1,25 @@
+$c-primary                : #0066CC;
+$c-secondary              : #EBDEA8;
+$c-secondary-darker       : #CFC499;
+$c-secondary-lighter      : #F4F1E8;
+
+$c-text                   : #000;
+$c-link-text              : $c-primary;
+$c-link-bg                : transparent;
+$c-link-focus-text        : $c-secondary;
+$c-link-focus-bg          : transparent;
+$c-link-hover-text        : $c-secondary;
+$c-link-hover-bg          : transparent;
+
+$c-blockquote-text        : lighten($c-text, 5);
+$c-blockquote-bg          : transparent;
+$c-pre-text               : lighten($c-text, 2);
+$c-pre-bg                 : lighten($c-text, 7);
+$c-kbd-text               : lighten($c-text, 2);
+$c-kbd-bg                 : lighten($c-text, 7);
+$c-mark-text              : lighten($c-text, 2);
+$c-mark-bg                : lighten($c-text, 7);
+
+$c-hr                     : $c-secondary;
+
+$c-headings               : $c-primary;

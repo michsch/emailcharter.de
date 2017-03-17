@@ -1,52 +1,20 @@
-// Colors
-
-$c-primary                : #17409D;
-$c-secondary              : #0066CC;
-$c-complementary          : #CC3535;
-$c-ambience-primary       : #C3B787;
-$c-ambience-secondary     : #EBDEA8;
-
-$c-text                   : #000;
-$c-link-text              : $c-complementary;
-$c-link-bg                : transparent;
-$c-link-focus-text        : $c-secondary;
-$c-link-focus-bg          : transparent;
-$c-link-hover-text        : $c-secondary;
-$c-link-hover-bg          : transparent;
-
-$c-blockquote-text        : lighten($c-text, 5);
-$c-blockquote-bg          : transparent;
-$c-pre-text               : lighten($c-text, 2);
-$c-pre-bg                 : lighten($c-text, 7);
-$c-kbd-text               : lighten($c-text, 2);
-$c-kbd-bg                 : lighten($c-text, 7);
-$c-mark-text              : lighten($c-text, 2);
-$c-mark-bg                : lighten($c-text, 7);
-
-$c-hr                     : $c-ambience-primary;
-
-$c-headings               : $c-primary;
-
-// Grid
-$std-gutter               : 20px;
-
 // Typography
 $font-sans                : 'Helvetica Neue', 'Lucida Grande', Helvetica, Arial, sans-serif;
 $font-serif               : Georgia, 'Times New Roman', Times, serif;
 $font-monospace           : Consolas, 'Lucida Console', 'Andale Mono', 'Bitstream Vera Sans Mono', 'Courier New', Courier;
 $font-headline            : $font-sans;
 
-$default-font-size        : 16;
-$base-font-size           : 16;
-$base-line-height         : 20;
+$default-font-size        : 16px;
+$base-font-size           : 16px;
+$base-line-height         : 20px;
 $base-margin              : 20;
 
-$h1-font-size             : 23;
-$h2-font-size             : 23;
-$h3-font-size             : 19;
-$h4-font-size             : 16;
-$h5-font-size             : 16;
-$h6-font-size             : 14;
+$h1-font-size             : 23px;
+$h2-font-size             : 23px;
+$h3-font-size             : 19px;
+$h4-font-size             : 16px;
+$h5-font-size             : 16px;
+$h6-font-size             : 14px;
 $text-big-font-size       : 18;
 $text-small-font-size     : 14;
 
@@ -59,9 +27,9 @@ $h6-line-height           : $base-line-height;
 
 $pc-base                  : $base-font-size * 1px;
 $em-base                  : $base-font-size * 1px;
-$font-size-body           : $base-font-size / $default-font-size * 100%;
+$font-size-body           : ($base-font-size / $default-font-size) * 1em;
 $line-height              : $base-line-height / $base-font-size;
-$std-margin               : $base-margin / $base-font-size * 1em;
+$std-margin               : ($base-margin / $base-font-size) * 1em;
 
 // scale factors (don't change - unless you know what you do)
 $h1-font-scale            : $h1-font-size / $base-font-size;
