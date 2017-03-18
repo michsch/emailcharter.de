@@ -1,3 +1,5 @@
+$ie-zoom: '*zoom' !default;
+
 // Micro clearfix provides an easy way to contain floats without adding additional markup
 //
 // Example usage:
@@ -13,44 +15,57 @@
 
 // Acknowledgements
 // Micro clearfix: [Nicolas Gallagher](http://nicolasgallagher.com/micro-clearfix-hack/)
-@mixin micro-clearfix() {
-  &:before,
-  &:after {
-    content: "";
+@mixin micro-clearfix {
+  // For IE 6/7 (trigger hasLayout)
+  #{$ie-zoom}: 1;
+
+  &::before,
+  &::after {
+    content: '';
     display: table;
   }
-  &:after {
+
+  &::after {
     clear: both;
   }
-
-  *zoom: 1; /* For IE 6/7 (trigger hasLayout) */
 }
 
 // standard clearfix
 // http://css-tricks.com/snippets/css/clear-fix/
-@mixin standard-clearfix() {
-  &:after {
+@mixin standard-clearfix {
+  &::after {
     visibility: hidden;
     display: block;
     font-size: 0;
-    content: " ";
+    content: ' ';
     clear: both;
     height: 0;
   }
-  * html &             { zoom: 1; } /* IE6 */
-  *:first-child+html & { zoom: 1; } /* IE7 */
+
+  // sass-lint:disable force-element-nesting
+  * html & {
+    // IE6
+    zoom: 1;
+  }
+  // sass-lint:enable force-element-nesting
+
+  *:first-child+html & {
+    // IE7
+    zoom: 1;
+  }
 }
 
 // YAML clearfix method
 // https://github.com/djesse/yaml4-sass/blob/master/sass/yaml/core/base-modules/_float-handling.scss
-@mixin ym-clearfix() {
-  &:before {
-    content: "";
+@mixin ym-clearfix {
+  &::before {
+    content: '';
     display: table;
   }
-  &:after {
+
+  &::after {
     clear: both;
-    content: ".";
+    content: '.';
     display: block;
     font-size: 0;
     height: 0;

@@ -1,10 +1,15 @@
-
+@import 'mixin/emailcharter-mixins';
 @import 'config/config';
-@import 'framework/normalize';
-@import 'framework/singularitygs';
 
-@include normalize();
+@import '../../node_modules/normalize-scss/sass/normalize';
+@import '../../node_modules/singularitygs/stylesheets/singularitygs';
+
+@include normalize;
 
 @import 'base/main';
+@import 'base/typography';
 
 @import 'layout/screen';
+@import 'layout/header';
+
+@import 'modules/modules';

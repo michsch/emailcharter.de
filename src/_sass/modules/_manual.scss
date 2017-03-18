@@ -1,0 +1,84 @@
+@media screen, projection {
+  .manual {
+    display: flex;
+    counter-reset: rules;
+    list-style-type: none;
+
+    > * {
+      width: 50%;
+      margin: 0;
+
+      padding: 0 $std-gutter;
+
+      &:nth-child(2n+1) {
+        padding-left: 0;
+      }
+
+      &:nth-child(2n) {
+        padding-right: 0;
+      }
+    }
+
+    > li {
+      position: relative;
+
+      &::before {
+        @include font-size(20);
+        @include line-height(40, 20);
+
+        position: absolute;
+        display: block;
+        counter-increment: rules;
+        content: counter(rules) '.';
+
+        top: 0;
+        left: 2px;
+        width: 40px;
+        height: 40px;
+        margin-top: 10px;
+
+        border-radius: 50%;
+        color: $c-primary;
+        background-color: $c-white;
+        text-align: center;
+        box-shadow: 0 0 0 1px $c-secondary-lighter, 0 0 0 2px $c-secondary-darker;
+      }
+
+      &:nth-child(2n) {
+        &::before {
+          left: $std-gutter;
+        }
+      }
+
+      header:first-child {
+        display: inline-block;
+        height: 60px;
+        line-height: 60px;
+        margin-left: 60px;
+        vertical-align: middle;
+
+        > * {
+          display: inline-block;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  p {
+    margin: ($std-margin / 2) 0 0;
+
+    &:first-child {
+      margin: 0;
+    }
+  }
+
+  blockquote {
+    @include font-size(14);
+    @include line-height(20, 14);
+
+    margin: ($std-margin / 2) 0 0 $std-margin;
+    font-family: $font-monospace;
+    font-style: normal;
+  }
+}

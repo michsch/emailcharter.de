@@ -1,4 +1,4 @@
-@media screen {
+@media screen, projection {
   body {
     margin: 0;
     padding: 0;
@@ -12,16 +12,28 @@
   }
 
   .page {
+    padding: 10px;
+  }
+
+  .site-header {
+    padding-top: 10px;
+
+    .page {
+      padding: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: em(600)) {
+  .page {
     padding: 20px;
   }
 
-  .email-rules ol {
-    columns: 2;
-    counter-reset: rules;
+  .site-header {
+    padding-top: 20px;
 
-    li {
-      content: counter(rules);
-	    counter-increment: rules;
+    .page {
+      padding: 0;
     }
   }
 }

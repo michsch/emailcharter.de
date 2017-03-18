@@ -1,12 +1,10 @@
-// Settings
-@import 'settings/px-to-pc';
-
 // Custom Functions
-@import 'functions/px-to-pc';
+@import 'functions/functions';
 
 // Addons & other mixins
 @import 'addons/clearfix';
 @import 'addons/first-child';
+@import 'addons/font-face';
 @import 'addons/font-size';
 @import 'addons/icon';
 @import 'addons/image-replace';

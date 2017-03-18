@@ -7,10 +7,11 @@
   $font-size: 100%;
 
   @if not unitless($pxval) {
-      $pxval: strip-units($pxval);
+    $pxval: strip-units($pxval);
   }
+
   @if not unitless($base) {
-      $base: strip-units($base);
+    $base: strip-units($base);
   }
 
   @if $unit == 'pc' {

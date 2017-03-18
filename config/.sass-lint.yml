@@ -1,0 +1,19 @@
+files:
+  include: 'src/_sass/**/*.s+(a|c)ss'
+  ignore:
+    - 'node_modules/**/*.scss'
+rules:
+  property-sort-order:
+    - 0
+  force-pseudo-nesting: 0
+  no-misspelled-properties:
+    - 1
+    - extra-properties:
+      - '*list-style'
+      - '*zoom'
+  quotes:
+    style: single
+  nesting-depth:
+    - 1
+    -
+      max-depth: 4

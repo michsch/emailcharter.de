@@ -4,10 +4,12 @@
 
 @function pc($pxval, $base: $pc-base) {
   @if not unitless($pxval) {
-      $pxval: strip-units($pxval);
+    $pxval: strip-units($pxval);
   }
+
   @if not unitless($base) {
-      $base: strip-units($base);
+    $base: strip-units($base);
   }
+
   @return ($pxval / $base) * 100%;
 }

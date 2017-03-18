@@ -6,10 +6,11 @@
 // @return string line height
 @mixin line-height($pxval, $base: $em-base) {
   @if not unitless($pxval) {
-      $pxval: strip-units($pxval);
+    $pxval: strip-units($pxval);
   }
+
   @if not unitless($base) {
-      $base: strip-units($base);
+    $base: strip-units($base);
   }
 
   line-height: ($pxval / $base);

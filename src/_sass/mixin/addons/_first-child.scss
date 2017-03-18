@@ -1,6 +1,7 @@
 // get first child of element and also th first child inside an
 // header element which is the first child.
 @mixin first-child {
+  // sass-lint:disable force-element-nesting
   > *:first-child,
   > header:first-child *:first-child {
     @content;

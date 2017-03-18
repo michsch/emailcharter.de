@@ -1,0 +1,80 @@
+@media screen, projection {
+  .social-share {
+    display: flex;
+    margin-top: $std-margin / 2;
+    padding: 0;
+    list-style-type: none;
+
+    > * {
+      box-sizing: border-box;
+      width: 40%;
+      margin: 0;
+      padding: 0 ($std-gutter / 2);
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        width: 20%;
+        padding-right: 0;
+        text-align: right;
+
+        * {
+          text-align: left;
+        }
+      }
+    }
+
+    .tooltip {
+      @include font-size(13);
+      @include line-height(16, 13);
+
+      display: none;
+      position: absolute;
+      width: 200px;
+      top: -30px;
+      right: 0;
+      padding: 5px;
+
+      color: $c-primary;
+      background-color: $c-secondary-lighter;
+      border: 1px solid $c-secondary-darker;
+      border-radius: 3px;
+    }
+
+    .icon-info {
+      position: relative;
+
+      &:focus,
+      &:hover {
+        .tooltip {
+          display: block;
+        }
+      }
+    }
+
+    .social-share-button {
+      @include font-size(13);
+      @include line-height(15, 13);
+
+      position: relative;
+      padding: 2px 5px 2px 40px;
+      cursor: pointer;
+      color: $c-link-text;
+      background-color: $c-secondary-lighter;
+      border: 1px solid $c-primary;
+      border-radius: 3px;
+      text-align: left;
+
+      &::before {
+        @include font-size(32);
+        position: absolute;
+        left: 4px;
+        top: 4px;
+        color: $c-inactive;
+        margin: 0;
+      }
+    }
+  }
+}

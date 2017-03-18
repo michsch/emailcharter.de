@@ -1,7 +1,10 @@
+$ie-text-indent: '*text-indent' !default;
+$no-font: '0/0 a' !default;
+
 // image replacement by Nicolas Gallagher (2011)
 // http://nicolasgallagher.com/another-css-image-replacement-technique/
 @mixin image-replace($image: null, $display: null, $reset-border-background: true) {
-  font: 0/0 a;
+  font: #{$no-font};
   text-shadow: none;
   color: transparent;
 
@@ -22,11 +25,12 @@
 // https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
 @mixin image-replace-h5bp($image: null, $display: null, $reset-border-background: true) {
   overflow: hidden;
-  /* IE 6/7 fallback */
-  *text-indent: -9999px;
+  // IE 6/7 fallback
 
-  &:before {
-    content: "";
+  #{$ie-text-indent}: -9999px;
+
+  &::before {
+    content: '';
     display: block;
     width: 0;
     height: 100%;
@@ -68,10 +72,11 @@
 }
 
 // set background image and dimensions
-@mixin image-and-dimensions($image, $display: null){
+@mixin image-and-dimensions($image, $display: null) {
+  @include image-dimensions($image);
+
   @if $display != null {
     display: $display;
   }
-  background: transparent image-url("#{$image}") no-repeat;
-  @include image-dimensions($image);
+  background: transparent image-url('#{$image}') no-repeat;
 }

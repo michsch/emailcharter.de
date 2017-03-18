@@ -1,8 +1,9 @@
-@mixin last-child ( $fallbackClass: last-child ) {
+@mixin last-child ($fallback-class: last-child) {
   &:last-child {
     @content;
   }
-  .#{fallbackClass} {
+
+  .#{fallback-class} {
     @content;
   }
 }

@@ -1,0 +1,21 @@
+<div class="nav-wrapper">
+  <nav class="nav-main nav-main--layout-advanced" role="navigation">
+    <div class="page-wrapper">
+      <div class="page">
+        <ul class="nav-main-menu" role="menu">
+          {% assign sorted_pages = site.pages | sort:"order" %}
+          {% for node in sorted_pages %}
+            {% if node.navTitle %}
+            <li
+              class="nav-main-menu-item {% if node.url == page.url %}active{% endif %}"
+              role="menu-item">
+              <a class="nav-main-menu-item-link" title="{{ node.url }} | {{ page.url }}" href="{{ node.url | prepend: site.baseurl }}">
+                {{ node.navTitle }}
+              </a>
+            </li>{% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

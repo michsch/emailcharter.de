@@ -1,12 +1,23 @@
+// sass-lint:disable force-element-nesting
 
-
-textarea, pre, code, kbd, samp, var, tt {
+textarea,
+pre,
+code,
+kbd,
+samp,
+var,
+tt {
   font-family: $font-monospace;
 }
 
 // --- Headings | Überschriften ---------------------------------------------- /
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $font-headline;
   font-weight: normal;
   margin: 0;
@@ -22,7 +33,7 @@ h1 {
   font-weight: 300;
 
   @if $use-font-smoothing-h1 == true {
-    @include font-smoothing();
+    @include font-smoothing;
   }
 }
 
@@ -34,7 +45,7 @@ h2 {
   font-weight: 300;
 
   @if $use-font-smoothing-h2 == true {
-    @include font-smoothing();
+    @include font-smoothing;
   }
 }
 
@@ -45,7 +56,7 @@ h3 {
   margin-top: em($base-margin, $h3-font-size);
 
   @if $use-font-smoothing-h3 == true {
-    @include font-smoothing();
+    @include font-smoothing;
   }
 }
 
@@ -57,7 +68,7 @@ h4 {
   font-weight: 600;
 
   @if $use-font-smoothing-h4 == true {
-    @include font-smoothing();
+    @include font-smoothing;
   }
 }
 
@@ -71,7 +82,7 @@ h5 {
   text-transform: uppercase;
 
   @if $use-font-smoothing-h5 == true {
-    @include font-smoothing();
+    @include font-smoothing;
   }
 }
 
@@ -84,7 +95,7 @@ h6 {
   font-style: italic;
 
   @if $use-font-smoothing-h6 == true {
-    @include font-smoothing();
+    @include font-smoothing;
   }
 }
 
@@ -95,20 +106,12 @@ ol,
 dl {
   font-size: 1em;
   line-height: $line-height;
-  margin: $std-margin 0 0 0;
-}
-
-ul {
-  list-style-type: none;
+  margin: $std-margin 0 0;
 }
 
 ol {
-  // Initiate a counter
-  counter-reset: li;
-  // Remove default numbering
-  list-style: none;
   // Keep using default numbering for IE6/7
-  *list-style: decimal;
+  // *list-style: decimal;
   padding: 0;
 }
 
@@ -135,53 +138,8 @@ ol li {
   line-height: $line-height;
 }
 
-
-ul li {
-  &:before {
-    //@include icon;
-    //@include font-size(10);
-
-    @include inline-block;
-    @include font-size(14);
-
-    margin-top: 2px;
-    margin-left: em(-20, 14);
-    margin-right: em(12, 14);
-
-    //content: "\f0c8"; // $fa-var-square;
-    //content: "\25A0"; // ■
-    content: "\25CF"; // ●
-
-    vertical-align: top;
-    color: $c-primary;
-  }
-
-  ul li:before {
-    //@include icon;
-    //content: "\f111"; // $fa-var-circle;
-    //content: "\25CF"; // ●
-    content: "\25A0"; // ■
-  }
-}
-
 ol li {
   margin: 0 0 0 em(36);
-
-  &:before {
-    @include inline-block();
-    @include font-size(16);
-    @include line-height($base-line-height, 16);
-
-    margin-top: 0px;
-    margin-left: em(-22, 14);
-    margin-right: em(10, 14);
-
-    content: counter(li) ". ";
-    counter-increment: li;
-
-    color: $c-primary;
-    vertical-align: top;
-  }
 }
 
 dt {
@@ -189,23 +147,26 @@ dt {
 }
 
 dd {
-  margin:0 0 $std-margin 0.8em;
+  margin: 0 0 $std-margin .8em;
 }
 
 // --- general text formatting | Allgemeine Textauszeichnung ----------------- /
 p {
   font-size: 1em;
   line-height: $line-height;
-  margin: $std-margin 0 0 0;
+  margin: $std-margin 0 0;
 }
 
 h4 + p {
   margin-top:  $std-margin / 2;
 }
 
-blockquote, cite, q {
+blockquote,
+cite,
+q {
   font-family: $font-sans;
-  font-weight: 300;
+  font-style: italic;
+  //font-weight: 300;
 }
 
 blockquote {
@@ -216,6 +177,11 @@ blockquote {
 
   p:first-child {
     margin-top: 0;
+  }
+
+  footer {
+    font-style: normal;
+    font-weight: 300;
   }
 }
 
@@ -237,24 +203,20 @@ small {
   @include font-size($text-small-font-size);
 }
 
-pre {
-  line-height: $line-height;
-  margin: 0 0 1em 0;
-  padding: ($std-gutter / 2);
-}
-
 pre,
 code,
 kbd,
 tt,
 samp,
 var {
-  font-size:100%;
+  font-size: 100%;
 }
 
 pre {
-  margin: $std-margin 0 0 0;
-  white-space: pre;
+  line-height: $line-height;
+  margin: $std-margin 0 0;
+  padding: ($std-gutter / 2);
+
   white-space: pre-wrap;
   word-wrap: break-word;
 }
@@ -281,7 +243,7 @@ dfn {
 
 acronym,
 abbr {
-  border-bottom: 1px #aaa dotted;
+  border-bottom: 1px $c-text dotted;
   font-variant: small-caps;
   letter-spacing: .07em;
   cursor: help;
@@ -297,10 +259,11 @@ sup {
 }
 
 sup {
-  top: -0.5em;
+  top: -.5em;
 }
+
 sub {
-  bottom: -0.25em;
+  bottom: -.25em;
 }
 
 mark {
@@ -309,10 +272,10 @@ mark {
 }
 
 hr {
-  color: #fff;
+  color: $c-white;
   background: transparent;
   margin: 0;
-  padding: $std-margin 0 0 0;
+  padding: $std-margin 0 0;
   border: 0;
   border-bottom: 1px $c-hr solid;
 }
@@ -328,6 +291,7 @@ a {
     background: $c-link-focus-bg;
     outline: 0 none;
   }
+
   &:hover,
   &:active {
     color: $c-link-hover-text;

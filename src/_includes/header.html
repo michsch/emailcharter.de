@@ -1,16 +1,22 @@
-<header class="site-header">
+<header class="site-header" role="banner">
 
   <div class="page-wrapper">
-    <div class="page">
-      <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-      <nav class="site-nav">
-        <div class="trigger">
-          {% for page in site.pages %}
-            {% if page.title %}<a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endif %}
-          {% endfor %}
-        </div>
-      </nav>
+    <div class="page header-columns">
+      <div class="logo">
+        {% if page.url == '/' %}
+          <h1 class="site-title">{{ site.title }}</h1>
+        {% else %}
+          <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+        {% endif %}
+      </div>
+      <section class="info-copyright">
+        <p>This is a copy of the original emailcharter.org website which sadly
+          is not online anymore. The last version could be viewed on
+          <a href="http://web.archive.org/web/20161111233236/http://www.emailcharter.org/">web.archive.org</a>.</p>
+      </section>
     </div>
   </div>
+
+  {% include nav-main.html %}
 
 </header>

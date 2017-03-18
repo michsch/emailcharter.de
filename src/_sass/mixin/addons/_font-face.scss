@@ -1,0 +1,14 @@
+// sass-lint:disable no-duplicate-properties indentation
+@mixin font-face($font-name, $font-url) {
+  @font-face {
+    font-family: #{$font-name};
+    src: url('#{$font-url}.eot?69289963');
+    src: url('#{$font-url}.eot?69289963#iefix') format('embedded-opentype'),
+         url('#{$font-url}.woff2?69289963') format('woff2'),
+         url('#{$font-url}.woff?69289963') format('woff'),
+         url('#{$font-url}.ttf?69289963') format('truetype'),
+         url('#{$font-url}.svg?69289963##{$font-name}') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+}

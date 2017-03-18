@@ -1,0 +1,232 @@
+// *************************************
+//
+//   Email Rules and List Styles
+//
+// *************************************
+
+$std-gutter-half: $std-gutter / 2 !default;
+$email-rules-border-width: 20px !default;
+
+@media screen, projection {
+
+  // -------------------------------------
+  //   Email Rules Container
+  // -------------------------------------
+
+  .email-rules {
+    padding: $std-gutter;
+    margin: $std-margin ($email-rules-border-width * -1) 0;
+  }
+
+  .email-rules-headline {
+    @include font-size(24);
+    @include line-height(30, 24);
+
+    margin: 0;
+  }
+
+  .email-rules--original-style {
+    background-color: $c-secondary-lighter;
+    border: $email-rules-border-width solid $c-secondary-dark;
+    border-top-color: $c-secondary;
+    border-bottom-color: $c-secondary-darker;
+    box-shadow: inset 0 0 0 5px $c-white;
+
+    .email-rules-headline {
+      text-align: center;
+    }
+  }
+
+  // -------------------------------------
+  //   Email Rules List
+  // -------------------------------------
+
+  // ----- Base List Styles  ----- //
+
+  %email-rules-list-base-styles {
+    counter-reset: rules;
+    list-style-type: none;
+    overflow: visible;
+    padding: 0;
+
+    li {
+      position: relative;
+      margin: 0 0 $std-margin;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &::before {
+        position: absolute;
+        display: block;
+        left: 2px;
+        counter-increment: rules;
+      }
+
+      header {
+        display: inline-block;
+
+        > * {
+          @include font-size(18);
+          @include line-height(20, 18);
+
+          display: inline-block;
+        }
+      }
+
+      header + p {
+        margin-top: 0;
+      }
+    }
+  }
+
+  // ----- Original List Layout ----- //
+
+  .email-rules-list--original-style {
+    @extend %email-rules-list-base-styles;
+
+    li {
+      &::before {
+        @include font-size(18);
+        @include line-height(20, 18);
+
+        top: 2px;
+        border-radius: 50%;
+        color: $c-primary;
+        text-align: center;
+
+        content: counter(rules) '.';
+      }
+
+      header {
+        margin: 0 0 ($std-margin / 2) 30px;
+        vertical-align: top;
+
+        > * {
+          margin-top: 0;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+  // ----- Modern List Layout ----- //
+
+  .email-rules-list--modern-style {
+    @extend %email-rules-list-base-styles;
+
+    li {
+      &::before {
+        @include font-size(20);
+        @include line-height(40, 20);
+
+        top: 0;
+        width: 40px;
+        height: 40px;
+        margin-top: 10px;
+
+        border-radius: 50%;
+        color: $c-primary;
+        background-color: $c-white;
+        text-align: center;
+        box-shadow: 0 0 0 1px $c-secondary-lighter, 0 0 0 2px $c-secondary-darker;
+
+        content: counter(rules);
+      }
+
+      header {
+        height: 60px;
+        line-height: 60px;
+        margin-left: 60px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: em(660)) {
+  .email-rules-headline {
+    @include font-size(30);
+    @include line-height(40, 30);
+  }
+
+  // -------------------------------------
+  //   2 Column Layout
+  // -------------------------------------
+
+  // ----- Original 2 Column Sorting ----- //
+  //  1  |  4  //
+  //  2  |  5  //
+  //  3  |  6  //
+
+  .email-rules-list--original-sorting {
+    columns: 2;
+    column-gap: $std-gutter;
+  }
+
+  // ----- Modern 2 Column Sorting with equal height items ----- //
+  //  1  |  2  //
+  // ----|-----//
+  //  3  |  4  //
+  // ----|-----//
+  //  5  |  6  //
+  // ----|-----//
+
+  .email-rules-list--modern-sorting {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    li {
+      display: block;
+      box-sizing: border-box;
+      width: 50%;
+      padding: $std-gutter-half;
+
+      &:nth-child(2n+1) {
+        padding-left: 0;
+        margin-left: 0;
+      }
+
+      &:nth-child(2n) {
+        padding-right: 0;
+        margin-right: 0;
+
+        &::before {
+          left: ($std-gutter / 2) + 2px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: em(1000)) {
+
+  // Larger gap for large screens.
+
+  .email-rules-list--modern-sorting {
+    li {
+      padding: 0 $std-gutter;
+
+      &:nth-child(2n+1) {
+        padding-left: 0;
+      }
+
+      &:nth-child(2n) {
+        padding-right: 0;
+
+        &::before {
+          left: $std-gutter + 2px;
+        }
+      }
+    }
+  }
+
+  .email-rules-list--original-sorting {
+    column-gap: $std-gutter * 2;
+  }
+}

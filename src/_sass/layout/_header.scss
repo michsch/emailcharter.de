@@ -1,0 +1,53 @@
+@media screen, projection {
+
+  .header-columns {
+    display: flex;
+    align-items: center;
+
+    > * {
+      width: 50%;
+    }
+  }
+
+  .site-title {
+    @include font-size(26);
+    @include line-height(30);
+
+    display: inline-block;
+    margin-top: 0;
+    color: $c-primary;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+
+  a {
+    &.site-title {
+      &:active,
+      &:focus,
+      &:hover {
+        text-decoration: none;
+        border-color: $c-secondary-darker;
+      }
+    }
+  }
+
+  .info-copyright {
+    padding: 10px;
+    border: 1px solid $c-secondary;
+    border-radius: 2px;
+
+    *:first-child {
+      margin-top: 0;
+    }
+
+    p {
+      @include font-size(14);
+      @include line-height(18);
+
+      color: $c-secondary-darker;
+    }
+  }
+
+}
